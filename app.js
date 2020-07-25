@@ -33,14 +33,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(
-	process.env.MONGODB_URI ||
-		'mongodb+srv://user:Paulpiercepp34@cluster1.kmtgh.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority',
-	{
-		useNewUrlParser: true,
-		useMongoClient: true
-	}
-);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:Paulpiercepp34@ds037368.mlab.com:37368/heroku_9bvdsnsl', {
+	useNewUrlParser: true
+});
 mongoose.set('useCreateIndex', true);
 
 const userSchema = new mongoose.Schema({
