@@ -12,7 +12,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -65,7 +65,7 @@ passport.use(
 		{
 			clientID: process.env.CLIENT_ID,
 			clientSecret: process.env.CLIENT_SECRET,
-			callbackURL: 'http://localhost:3000/auth/google/secrets',
+			callbackURL: '/auth/google/secrets',
 			userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
 		},
 		function(accessToken, refreshToken, profile, cb) {
@@ -173,5 +173,5 @@ app.post('/login', function(req, res) {
 });
 
 app.listen(PORT, function() {
-	console.log('Server started on port 5000.');
+	console.log('Server started on port 3000.');
 });
