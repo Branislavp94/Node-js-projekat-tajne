@@ -12,7 +12,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -173,5 +173,5 @@ app.post('/login', function(req, res) {
 });
 
 app.listen(PORT, function() {
-	console.log('Server started on port 3000.');
+	console.log('Server started on port 5000.');
 });
