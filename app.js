@@ -13,9 +13,6 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const http = require('http');
-const server = http.server(app);
-
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(
