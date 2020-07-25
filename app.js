@@ -9,9 +9,10 @@ const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -20,10 +21,6 @@ app.use(
 		extended: true
 	})
 );
-
-app.listen(PORT, function() {
-	console.log('Server started on port 3000.');
-});
 
 app.use(
 	session({
@@ -173,4 +170,8 @@ app.post('/login', function(req, res) {
 			});
 		}
 	});
+});
+
+app.listen(PORT, function() {
+	console.log('Server started on port 3000.');
 });
