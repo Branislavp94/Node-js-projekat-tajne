@@ -33,7 +33,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:Paulpiercepp34@ds037368.mlab.com:37368/heroku_9bvdsnsl', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:Paulpiercepp34@ds249967.mlab.com:49967/heroku_q619bqth', {
 	useNewUrlParser: true
 });
 mongoose.set('useCreateIndex', true);
